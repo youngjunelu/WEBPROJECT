@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Habits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Habit name</th>
+      <th>Is binary</th>
+      <th>Start date time</th>
+      <th>Frequency</th>
+      <th>Unit</th>
+      <th>Habit icon</th>
+      <th>Habit description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @habits.each do |habit| %>
+      <tr>
+        <td><%= habit.habit_name %></td>
+        <td><%= habit.is_binary %></td>
+        <td><%= habit.start_date_time %></td>
+        <td><%= habit.frequency %></td>
+        <td><%= habit.unit %></td>
+        <td><%= habit.habit_icon %></td>
+        <td><%= habit.habit_description %></td>
+        <td><%= link_to 'Show', habit %></td>
+        <td><%= link_to 'Edit', edit_habit_path(habit) %></td>
+        <td><%= link_to 'Destroy', habit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Habit', new_habit_path %>

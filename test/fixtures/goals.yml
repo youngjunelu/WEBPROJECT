@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goal_name: MyString
+  goal_icon: 
+  is_reached: false
+  goal_worth: 
+
+two:
+  goal_name: MyString
+  goal_icon: 
+  is_reached: false
+  goal_worth: 

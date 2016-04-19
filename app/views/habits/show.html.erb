@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Habit name:</strong>
+  <%= @habit.habit_name %>
+</p>
+
+<p>
+  <strong>Is binary:</strong>
+  <%= @habit.is_binary %>
+</p>
+
+<p>
+  <strong>Start date time:</strong>
+  <%= @habit.start_date_time %>
+</p>
+
+<p>
+  <strong>Frequency:</strong>
+  <%= @habit.frequency %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @habit.unit %>
+</p>
+
+<p>
+  <strong>Habit icon:</strong>
+  <%= @habit.habit_icon %>
+</p>
+
+<p>
+  <strong>Habit description:</strong>
+  <%= @habit.habit_description %>
+</p>
+
+<%= link_to 'Edit', edit_habit_path(@habit) %> |
+<%= link_to 'Back', habits_path %>

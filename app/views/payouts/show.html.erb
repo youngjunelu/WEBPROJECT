@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Payout name:</strong>
+  <%= @payout.payout_name %>
+</p>
+
+<p>
+  <strong>Payout icon:</strong>
+  <%= @payout.payout_icon %>
+</p>
+
+<%= link_to 'Edit', edit_payout_path(@payout) %> |
+<%= link_to 'Back', payouts_path %>

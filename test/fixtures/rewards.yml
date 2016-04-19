@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reward_name: MyString
+  cost: 
+  is_bought: false
+
+two:
+  reward_name: MyString
+  cost: 
+  is_bought: false

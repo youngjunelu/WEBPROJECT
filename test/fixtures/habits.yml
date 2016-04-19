@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  habit_name: MyString
+  is_binary: false
+  start_date_time: 2016-04-19 11:18:54
+  frequency: 
+  unit: MyString
+  habit_icon: 
+  habit_description: MyString
+
+two:
+  habit_name: MyString
+  is_binary: false
+  start_date_time: 2016-04-19 11:18:54
+  frequency: 
+  unit: MyString
+  habit_icon: 
+  habit_description: MyString
