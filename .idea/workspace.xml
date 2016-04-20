@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a002c13f-e47a-428e-967d-279040b9dd4b" name="Default" comment="Login required to access any page">
+    <list default="true" id="a002c13f-e47a-428e-967d-279040b9dd4b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
     </list>
     <ignored path="WebProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -421,7 +420,7 @@
       <workItem from="1461095924317" duration="16000" />
       <workItem from="1461095986875" duration="1523000" />
       <workItem from="1461111294221" duration="4698000" />
-      <workItem from="1461124528176" duration="727000" />
+      <workItem from="1461124528176" duration="745000" />
     </task>
     <task id="LOCAL-00001" summary="Alex commiting changes to application.html.erb (3)">
       <created>1456270238830</created>
@@ -472,11 +471,18 @@
       <option name="project" value="LOCAL" />
       <updated>1461113922764</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Login required to access any page">
+      <created>1461125281973</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1461125281973</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11637000" />
+    <option name="totallyTimeSpent" value="11655000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="647" extended-state="6" />
