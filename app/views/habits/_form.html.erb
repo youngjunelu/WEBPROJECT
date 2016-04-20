@@ -1,45 +1,76 @@
-<%= form_for(@habit) do |f| %>
-  <% if @habit.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@habit.errors.count, "error") %> prohibited this habit from being saved:</h2>
+<%= form_for @habit, :html => { :class => "form-horizontal habit" } do |f| %>
 
-      <ul>
-      <% @habit.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @habit.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@habit.errors.count, "error") %> prohibited this habit from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @habit.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :habit_name %><br>
-    <%= f.text_field :habit_name %>
+  <div class="form-group">
+    <%= f.label :habit_name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :habit_name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:habit_name) %>
   </div>
-  <div class="field">
-    <%= f.label :is_binary %><br>
-    <%= f.check_box :is_binary %>
+  <div class="form-group">
+    <%= f.label :is_binary, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :is_binary, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:is_binary) %>
   </div>
-  <div class="field">
-    <%= f.label :start_date_time %><br>
-    <%= f.datetime_select :start_date_time %>
+  <div class="form-group">
+    <%= f.label :start_date_time, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :start_date_time, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:start_date_time) %>
   </div>
-  <div class="field">
-    <%= f.label :frequency %><br>
-    <%= f.text_field :frequency %>
+  <div class="form-group">
+    <%= f.label :frequency, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :frequency, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:frequency) %>
   </div>
-  <div class="field">
-    <%= f.label :unit %><br>
-    <%= f.text_field :unit %>
+  <div class="form-group">
+    <%= f.label :unit, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :unit, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:unit) %>
   </div>
-  <div class="field">
-    <%= f.label :habit_icon %><br>
-    <%= f.text_field :habit_icon %>
+  <div class="form-group">
+    <%= f.label :habit_icon, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :habit_icon, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:habit_icon) %>
   </div>
-  <div class="field">
-    <%= f.label :habit_description %><br>
-    <%= f.text_field :habit_description %>
+  <div class="form-group">
+    <%= f.label :habit_description, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :habit_description, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:habit_description) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                habits_path, :class => 'btn btn-default' %>
+    </div>
   </div>
+
 <% end %>

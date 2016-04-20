@@ -1,33 +1,55 @@
-<%= form_for(@goal) do |f| %>
-  <% if @goal.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@goal.errors.count, "error") %> prohibited this goal from being saved:</h2>
+<%= form_for @goal, :html => { :class => "form-horizontal goal" } do |f| %>
 
-      <ul>
-      <% @goal.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @goal.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@goal.errors.count, "error") %> prohibited this goal from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @goal.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :goal_name %><br>
-    <%= f.text_field :goal_name %>
+  <div class="form-group">
+    <%= f.label :goal_name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :goal_name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:goal_name) %>
   </div>
-  <div class="field">
-    <%= f.label :goal_icon %><br>
-    <%= f.text_field :goal_icon %>
+  <div class="form-group">
+    <%= f.label :goal_icon, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :goal_icon, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:goal_icon) %>
   </div>
-  <div class="field">
-    <%= f.label :is_reached %><br>
-    <%= f.check_box :is_reached %>
+  <div class="form-group">
+    <%= f.label :is_reached, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :is_reached, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:is_reached) %>
   </div>
-  <div class="field">
-    <%= f.label :goal_worth %><br>
-    <%= f.text_field :goal_worth %>
+  <div class="form-group">
+    <%= f.label :goal_worth, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :goal_worth, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:goal_worth) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                goals_path, :class => 'btn btn-default' %>
+    </div>
   </div>
+
 <% end %>

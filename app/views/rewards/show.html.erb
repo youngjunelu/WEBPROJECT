@@ -1,19 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Reward -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Reward name:</strong>
-  <%= @reward.reward_name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:reward_name) %>:</strong></dt>
+  <dd><%= @reward.reward_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cost) %>:</strong></dt>
+  <dd><%= @reward.cost %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:is_bought) %>:</strong></dt>
+  <dd><%= @reward.is_bought %></dd>
+</dl>
 
-<p>
-  <strong>Cost:</strong>
-  <%= @reward.cost %>
-</p>
-
-<p>
-  <strong>Is bought:</strong>
-  <%= @reward.is_bought %>
-</p>
-
-<%= link_to 'Edit', edit_reward_path(@reward) %> |
-<%= link_to 'Back', rewards_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              rewards_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_reward_path(@reward), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              reward_path(@reward),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
