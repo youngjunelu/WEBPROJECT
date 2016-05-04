@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :entries
   resources :habits
   resources :categories
+  resources :users
   devise_for :users
   root to: 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
