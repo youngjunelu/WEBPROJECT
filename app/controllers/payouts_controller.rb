@@ -15,10 +15,12 @@ class PayoutsController < ApplicationController
   # GET /payouts/new
   def new
     @payout = Payout.new
+    @goals=Goal.all
   end
 
   # GET /payouts/1/edit
   def edit
+    @goals=Goal.all
   end
 
   # POST /payouts
@@ -69,6 +71,6 @@ class PayoutsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def payout_params
-      params.require(:payout).permit(:payout_name, :payout_icon)
+      params.require(:payout).permit(:payout_name, :goal_id, :payout_icon)
     end
 end

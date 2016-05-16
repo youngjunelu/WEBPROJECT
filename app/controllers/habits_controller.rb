@@ -15,10 +15,12 @@ class HabitsController < ApplicationController
   # GET /habits/new
   def new
     @habit = Habit.new
+    @categories=Category.all
   end
 
   # GET /habits/1/edit
   def edit
+    @categories=Category.all
   end
 
   # POST /habits
@@ -69,6 +71,6 @@ class HabitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def habit_params
-      params.require(:habit).permit(:habit_name, :is_binary, :start_date_time, :frequency, :unit, :habit_icon, :habit_description)
+      params.require(:habit).permit(:habit_name, :category_id, :is_binary, :start_date_time, :frequency, :unit, :habit_icon, :habit_description)
     end
 end

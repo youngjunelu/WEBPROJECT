@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420003124) do
+ActiveRecord::Schema.define(version: 20160516075228) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "category_name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160420003124) do
     t.string   "category_description"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.integer  "user_id"
   end
 
   create_table "entries", force: :cascade do |t|
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160420003124) do
     t.datetime "date_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "habit_id"
   end
 
   create_table "goals", force: :cascade do |t|
@@ -35,6 +37,7 @@ ActiveRecord::Schema.define(version: 20160420003124) do
     t.integer  "goal_worth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "habit_id"
   end
 
   create_table "habits", force: :cascade do |t|
@@ -47,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160420003124) do
     t.string   "habit_description"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "category_id"
   end
 
   create_table "payouts", force: :cascade do |t|
@@ -54,6 +58,7 @@ ActiveRecord::Schema.define(version: 20160420003124) do
     t.binary   "payout_icon"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "goal_id"
   end
 
   create_table "rewards", force: :cascade do |t|
@@ -62,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160420003124) do
     t.boolean  "is_bought"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|

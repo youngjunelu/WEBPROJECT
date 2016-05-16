@@ -15,10 +15,12 @@ class GoalsController < ApplicationController
   # GET /goals/new
   def new
     @goal = Goal.new
+    @habits=Habit.all
   end
 
   # GET /goals/1/edit
   def edit
+    @habits=Habit.all
   end
 
   # POST /goals
@@ -69,6 +71,6 @@ class GoalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def goal_params
-      params.require(:goal).permit(:goal_name, :goal_icon, :is_reached, :goal_worth)
+      params.require(:goal).permit(:goal_name, :habit_id, :goal_icon, :is_reached, :goal_worth)
     end
 end

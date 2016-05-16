@@ -23,9 +23,16 @@
     <%=f.error_span(:habit_name) %>
   </div>
   <div class="form-group">
+    <%= f.label :category_id, :class=> 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= collection_select(:habit, :category_id, @categories, :id, :category_name) %>
+    </div>
+    <%=f.error_span(:category_id) %>
+  </div>
+  <div class="form-group">
     <%= f.label :is_binary, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :is_binary, :class => 'form-control' %>
+      <%= f.check_box :is_binary %>
     </div>
     <%=f.error_span(:is_binary) %>
   </div>
@@ -39,7 +46,7 @@
   <div class="form-group">
     <%= f.label :frequency, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :frequency, :class => 'form-control' %>
+      <%= f.select :frequency, (0..20) %>
     </div>
     <%=f.error_span(:frequency) %>
   </div>

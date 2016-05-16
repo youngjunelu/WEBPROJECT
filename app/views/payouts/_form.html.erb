@@ -23,6 +23,13 @@
     <%=f.error_span(:payout_name) %>
   </div>
   <div class="form-group">
+    <%= f.label :goal_id, :class=> 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= collection_select(:payout, :goal_id, @goals, :id, :goal_name) %>
+    </div>
+    <%=f.error_span(:goal_id) %>
+  </div>
+  <div class="form-group">
     <%= f.label :payout_icon, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_field :payout_icon, :class => 'form-control' %>

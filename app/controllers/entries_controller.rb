@@ -15,10 +15,12 @@ class EntriesController < ApplicationController
   # GET /entries/new
   def new
     @entry = Entry.new
+    @habits=Habit.all
   end
 
   # GET /entries/1/edit
   def edit
+    @habits=Habit.all
   end
 
   # POST /entries
@@ -69,6 +71,6 @@ class EntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
-      params.require(:entry).permit(:value, :date_time)
+      params.require(:entry).permit(:value, :habit_id, :date_time)
     end
 end
