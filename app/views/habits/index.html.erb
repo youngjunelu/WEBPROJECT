@@ -8,7 +8,6 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:habit_name) %></th>
       <th><%= model_class.human_attribute_name(:category_id) %></th>
-      <th><%= model_class.human_attribute_name(:is_binary) %></th>
       <th><%= model_class.human_attribute_name(:start_date_time) %></th>
       <th><%= model_class.human_attribute_name(:frequency) %></th>
       <th><%= model_class.human_attribute_name(:unit) %></th>
@@ -24,7 +23,6 @@
         <td><%= link_to habit.id, habit_path(habit) %></td>
         <td><%= habit.habit_name %></td>
         <td><%= habit.category_id %></td>
-        <td><%= habit.is_binary %></td>
         <td><%= habit.start_date_time %></td>
         <td><%= habit.frequency %></td>
         <td><%= habit.unit %></td>

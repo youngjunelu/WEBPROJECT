@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
   has_many :habits
   has_many :rewards
   has_many :categories
+  has_many :entries
 end

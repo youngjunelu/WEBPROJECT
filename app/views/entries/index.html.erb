@@ -5,22 +5,20 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:value) %></th>
       <th><%= model_class.human_attribute_name(:habit_id) %></th>
-      <th><%= model_class.human_attribute_name(:date_time) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:value) %></th>
+      <th><%= model_class.human_attribute_name(:units) %></th>
+      <th><%= model_class.human_attribute_name(:due_date) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @entries.each do |entry| %>
       <tr>
-        <td><%= link_to entry.id, entry_path(entry) %></td>
-        <td><%= entry.value %></td>
         <td><%= entry.habit_id %></td>
+        <td><%= entry.value %></td>
+        <td><%= entry.units %></td>
         <td><%= entry.date_time %></td>
-        <td><%= entry.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_entry_path(entry), :class => 'btn btn-default btn-xs' %>

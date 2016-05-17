@@ -4,11 +4,13 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:value) %>:</strong></dt>
-  <dd><%= @entry.value %></dd>
   <dt><strong><%= model_class.human_attribute_name(:habit_id) %>:</strong></dt>
   <dd><%= @entry.habit_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:date_time) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:value) %>:</strong></dt>
+  <dd><%= @entry.value %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:units) %>:</strong></dt>
+  <dd><%= @entry.units %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:due_date) %>:</strong></dt>
   <dd><%= @entry.date_time %></dd>
 </dl>
 

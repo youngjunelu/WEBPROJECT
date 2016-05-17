@@ -15,8 +15,7 @@ class EntriesController < ApplicationController
   # GET /entries/new
   def new
     @entry = Entry.new
-    current_user.entries<<@entry
-    @habits= Habit.all
+    @habits= current_user.habits
   end
 
   # GET /entries/1/edit
@@ -31,6 +30,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
+        current_user.entries<<@entry
         format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
         format.json { render :show, status: :created, location: @entry }
       else
@@ -72,6 +72,6 @@ class EntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
-      params.require(:entry).permit(:value, :habit_id, :date_time)
+      params.require(:entry).permit(:value, :units, :habit_id, :date_time)
     end
 end

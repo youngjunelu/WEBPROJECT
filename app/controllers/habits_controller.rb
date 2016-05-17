@@ -15,8 +15,7 @@ class HabitsController < ApplicationController
   # GET /habits/new
   def new
     @habit = Habit.new
-    current_user.habits<<@habit
-    @categories=Category.all
+    @categories=current_user.categories
   end
 
   # GET /habits/1/edit
@@ -31,6 +30,7 @@ class HabitsController < ApplicationController
 
     respond_to do |format|
       if @habit.save
+        current_user.habits<<@habit
         format.html { redirect_to @habit, notice: 'Habit was successfully created.' }
         format.json { render :show, status: :created, location: @habit }
       else

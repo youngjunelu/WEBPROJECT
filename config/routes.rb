@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :payouts
-  resources :rewards
-  resources :goals
   resources :entries
   resources :habits
   resources :categories

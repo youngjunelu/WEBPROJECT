@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160517172956) do
+ActiveRecord::Schema.define(version: 20160517224732) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "category_name"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20160517172956) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "habit_id"
+    t.integer  "user_id"
+    t.string   "units"
   end
 
   create_table "goals", force: :cascade do |t|
@@ -47,7 +49,8 @@ ActiveRecord::Schema.define(version: 20160517172956) do
     t.integer  "frequency"
     t.string   "unit"
     t.binary   "habit_icon"
-    t.string   "habit_description"
+    t.string   "habit_description"    change_column :entries, :units, :integer
+
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "category_id"

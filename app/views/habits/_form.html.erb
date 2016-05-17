@@ -30,23 +30,16 @@
     <%=f.error_span(:category_id) %>
   </div>
   <div class="form-group">
-    <%= f.label :is_binary, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.check_box :is_binary %>
-    </div>
-    <%=f.error_span(:is_binary) %>
-  </div>
-  <div class="form-group">
     <%= f.label :start_date_time, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.datetime_select :start_date_time, :class => 'form-control' %>
+      <%= f.date_select :start_date_time, :class => 'form-control' %>
     </div>
     <%=f.error_span(:start_date_time) %>
   </div>
   <div class="form-group">
     <%= f.label :frequency, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.select :frequency, (0..20) %>
+      <%=  f.text_field :frequency, :class => 'form-control' %>
     </div>
     <%=f.error_span(:frequency) %>
   </div>

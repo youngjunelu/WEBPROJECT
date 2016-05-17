@@ -5,8 +5,6 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = current_user.categories
-        #current_user.categories
-        #Category.find(:all, :conditions => {:user_id => session[user_id]})
   end
 
   # GET /categories/1
@@ -17,7 +15,6 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.new
-    current_user.categories<<@category
   end
 
   # GET /categories/1/edit
@@ -31,6 +28,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
+        current_user.categories<<@category
         format.html { redirect_to @category, notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @category }
       else
