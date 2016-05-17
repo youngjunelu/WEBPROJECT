@@ -4,7 +4,7 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+    @entries = current_user.entries
   end
 
   # GET /entries/1
@@ -15,7 +15,8 @@ class EntriesController < ApplicationController
   # GET /entries/new
   def new
     @entry = Entry.new
-    @habits=Habit.all
+    current_user.entries<<@entry
+    @habits= Habit.all
   end
 
   # GET /entries/1/edit

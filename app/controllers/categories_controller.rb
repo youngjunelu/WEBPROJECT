@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    @categories = current_user.categories
         #current_user.categories
         #Category.find(:all, :conditions => {:user_id => session[user_id]})
   end
