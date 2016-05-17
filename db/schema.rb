@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20160517224732) do
     t.integer  "frequency"
     t.string   "unit"
     t.binary   "habit_icon"
-    t.string   "habit_description"    change_column :entries, :units, :integer
+    t.string   "habit_description"
 
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
