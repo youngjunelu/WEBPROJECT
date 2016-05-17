@@ -5,6 +5,8 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
+        #current_user.categories
+        #Category.find(:all, :conditions => {:user_id => session[user_id]})
   end
 
   # GET /categories/1
@@ -15,6 +17,7 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.new
+    current_user.categories<<@category
   end
 
   # GET /categories/1/edit

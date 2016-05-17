@@ -3,7 +3,6 @@
   <component name="dataSourceStorageLocal">
     <data-source name="Sqlite (Xerial) - development.sqlite3" uuid="d1498934-b5ed-4d63-bbab-8adcdbe8fd3c">
       <secret-storage>master_key</secret-storage>
-      <auth-required>false</auth-required>
     </data-source>
   </component>
 </project>
